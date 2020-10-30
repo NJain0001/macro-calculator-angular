@@ -1,0 +1,106 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1em;
+    margin: 0 1em;
+}
+.user-information {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.user-information, .result-section {
+    padding: .8em;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+.user-form {
+    height: 60vh;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    margin: auto
+}
+
+.form-control {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 1em;
+    height: 2em;
+}
+
+.form-control > label {
+    text-align: right;
+    margin-right: 1em;
+    align-self: center;
+}
+
+.form-control > input {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.result-section {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#calculate-img {
+    width:36px;
+    height: 36px;
+    margin-right: .25em;
+}
+
+.submit-btn {
+    height: 3.2rem;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: #333399;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.submit-btn > img,
+.submit-btn > span {
+    vertical-align: middle;
+}
+
+.result-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+}
+
+.macro-nutrient-card {
+    height: 125px;
+    width: 175px;
+    background-color: rgb(75, 66, 66);
+    color: white;
+    text-align: center;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.macro-nutrient-card > .macro-nutrient-label {
+    font-size: 1em;
+    display: block;
+    color: azure;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+}
+
+.macro-nutrient-card > .macro-nutrient-value {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.mass-container {
+    background-color: blue;
+}

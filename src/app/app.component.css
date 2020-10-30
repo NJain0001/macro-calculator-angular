@@ -1,0 +1,14 @@
+nav {
+    height: 3em;
+    width: 100%;
+    background-color: lightblue;
+    margin-bottom: 2em;
+    padding: .5em 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav > span {
+    top: 100%;
+}
