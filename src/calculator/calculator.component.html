@@ -33,19 +33,19 @@
     <div  class="result-flex-container">
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Protein </label> 
-        <span class="macro-nutrient-value">{{calories.Protein}}</span>
+        <span class="macro-nutrient-value">{{calories.Protein | number: '1.0-1'}}</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Carb </label> 
-        <span class="macro-nutrient-value">{{calories.Carb}}</span>
+        <span class="macro-nutrient-value">{{calories.Carb | number: '1.0-1'}}</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Fat </label> 
-        <span class="macro-nutrient-value">{{calories.Fat}}</span>
+        <span class="macro-nutrient-value">{{calories.Fat | number: '1.0-1'}}</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Total </label> 
-        <span class="macro-nutrient-value">{{calories.Total}}</span>
+        <span class="macro-nutrient-value">{{calories.Total | number: '1.0-1'}}</span>
       </div>
     </div>
 
@@ -53,15 +53,15 @@
     <div class="result-flex-container">
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Protein </label> 
-        <span class="macro-nutrient-value">{{caloriesInGrams.Protein}} g</span>
+        <span class="macro-nutrient-value">{{caloriesInGrams.Protein | number: '1.0-0'}} g</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Carb </label> 
-        <span class="macro-nutrient-value">{{caloriesInGrams.Carb}} g</span>
+        <span class="macro-nutrient-value">{{caloriesInGrams.Carb | number: '1.0-0'}} g</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Fat </label> 
-        <span class="macro-nutrient-value">{{caloriesInGrams.Fat}} g</span>
+        <span class="macro-nutrient-value">{{caloriesInGrams.Fat | number: '1.0-0'}} g</span>
       </div>
       <div class="macro-nutrient-card">
         <label class="macro-nutrient-label">Total </label> 
