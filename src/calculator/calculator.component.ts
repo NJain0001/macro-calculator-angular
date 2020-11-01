@@ -20,7 +20,6 @@ export class CalculatorComponent {
 
   calculateMacros(userInputForm: NgForm) {
     this.userData = userInputForm.value;
-
     this.calories = this.calculatorService.calculateCalories(this.userData);
     this.caloriesInGrams = this.calculatorService.calculateGramsFromCalories(this.calories);
 

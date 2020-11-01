@@ -1,6 +1,7 @@
 export interface UserData {
     weight: number;
-    timeFrame: number;
+    timeFrame: Date;
     weightGoal: number;
     weightMultiplier: number;
+    caloriesPerWeek: number;
 }

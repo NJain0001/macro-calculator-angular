@@ -102,6 +102,10 @@ h2 {
     font-weight: bold;
 }
 
+.ng-untouched input[type=date]::-webkit-datetime-edit{
+    color: #999;
+}
+
 @media screen and (min-width: 600px) {
     .wrapper {
         margin: 0 4em;

@@ -11,7 +11,8 @@ export class CalculatorService {
   constructor() { }
 
   calculateCalories(userData: UserData): Calories {
-    const totalCalories = (userData.weight * userData.weightMultiplier) - 1000;
+    const caloriesPerDay = this.calculateCalorieChangePerDay(userData);
+    const totalCalories = (userData.weight * userData.weightMultiplier) + caloriesPerDay;
 
     const calories: Calories = {
     Total: totalCalories,
@@ -24,7 +25,7 @@ export class CalculatorService {
   }
 
   calculateGramsFromCalories(calories: Calories): MassMacronutrients {
-    
+
     const caloriesInGram: MassMacronutrients = {
       Protein: Math.round(calories.Protein / 4),
       Carb: Math.round(calories.Carb / 4),
@@ -32,5 +33,25 @@ export class CalculatorService {
     };
 
     return caloriesInGram;
+  }
+
+  private calculateCalorieChangePerDay(userData: UserData): number {
+    const weeksFromGoal = this.getDateDifferenceInWeeksFromCurrentDate(userData.timeFrame);
+    const weightDifference = userData.weightGoal - userData.weight;
+
+    const weightPerWeek = weightDifference / weeksFromGoal;
+
+    const caloriesPerDays = weightPerWeek * 500;
+
+    return caloriesPerDays;
+
+  }
+
+  private getDateDifferenceInWeeksFromCurrentDate(timeFrameDate: Date): number {
+    const date = new Date(timeFrameDate);
+    const currentDate = new Date();
+
+    const weeksFromDate = Math.ceil((date.getTime() - currentDate.getTime()) / 1000 / 60 / 60 / 24 / 7);
+    return weeksFromDate;
   }
 }
