@@ -3,11 +3,6 @@
     <h2>User Information</h2>
     <form #userDataForm="ngForm" (ngSubmit) = "calculateMacros(userDataForm)" class="user-form">
       <div class="form-control">
-        <label for="name" class="label">Full Name</label>
-        <input type="text" id="name" class="full-name" name="fullName" ngModel required/>
-      </div>
-
-      <div class="form-control">
         <label for="weight" class="label">Weight</label>
         <input type="number" id="weight" name="weight" ngModel required/>
       </div>
