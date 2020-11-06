@@ -35,13 +35,27 @@ export class CalculatorService {
     return caloriesInGram;
   }
 
+  determineWeightChangeTooRisky(userData: UserData): string {
+    let message = '';
+
+    if (userData.weightChangePerWeek > 2) {
+      message = `The recommended weight gain is 1-2 lbs/week. Your weight gain rate is ${userData.weightChangePerWeek} lbs/week`;
+
+    } else if (userData.weightChangePerWeek < -2) {
+      message = `The recommended weight loss is 1-2 lbs/week. Your weight loss rate is ${Math.abs(userData.weightChangePerWeek)} lbs/week`;
+
+    }
+
+    return message;
+  }
+
   private calculateCalorieChangePerDay(userData: UserData): number {
     const weeksFromGoal = this.getDateDifferenceInWeeksFromCurrentDate(userData.timeFrame);
     const weightDifference = userData.weightGoal - userData.weight;
 
-    const weightPerWeek = weightDifference / weeksFromGoal;
+    userData.weightChangePerWeek = weightDifference / weeksFromGoal;
 
-    const caloriesPerDays = weightPerWeek * 500;
+    const caloriesPerDays = userData.weightChangePerWeek * 500;
 
     return caloriesPerDays;
 

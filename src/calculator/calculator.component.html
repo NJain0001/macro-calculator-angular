@@ -29,6 +29,12 @@
     </form>
   </section>
   <section class="result-section" *ngIf="(calories && caloriesInGrams)">
+    <div class="warning-block" *ngIf="warningMessage.message">
+      <img src="../assets/images/warning-24px.svg" alt="Warning" class="warning-icon">
+      <span class="warning-message">
+        WARNING: {{warningMessage.message}}
+      </span>
+    </div>
     <h2>Calories</h2>
     <div  class="result-flex-container">
       <div class="macro-nutrient-card">
