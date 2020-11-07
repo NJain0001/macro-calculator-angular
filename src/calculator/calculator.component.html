@@ -18,8 +18,12 @@
       </div>
 
       <div class="form-control">
-        <label for="weight-multiplier" class="label">Weight Multiplier</label>
-        <input type="number" id="weight-multiplier" name="weightMultiplier" ngModel required />
+        <label for="weight-multiplier" class="label">Lifestyle</label>
+        <select name="weightMultiplier" ngModel>
+          <option *ngFor="let lifestyle of lifestyleOptions" [value]="lifestyle.Multiplier">
+            {{lifestyle.Name}}
+          </option>
+        </select>
       </div>
 
       <button class="submit-btn">

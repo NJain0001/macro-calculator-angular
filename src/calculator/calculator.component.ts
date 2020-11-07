@@ -5,6 +5,7 @@ import { CalculatorService } from './services/calculator.service';
 import { Calories } from './interfaces/Calories';
 import { MassMacronutrients } from './interfaces/MassMacronutrients';
 import { WarningMessage } from './interfaces/WarningMessage';
+import { ConfigurationService } from './services/configuration.service';
 
 @Component({
   selector: 'app-calculator',
@@ -17,8 +18,10 @@ export class CalculatorComponent {
   calories: Calories;
   caloriesInGrams: MassMacronutrients;
   warningMessage: WarningMessage;
+  lifestyleOptions: [];
 
-  constructor(private calculatorService: CalculatorService) {
+  constructor(private calculatorService: CalculatorService,
+              private configurationService: ConfigurationService) {
     // this.userData = {
     //   weight: 190,
     //   timeFrame: new Date('11/12/2020'),
@@ -26,6 +29,7 @@ export class CalculatorComponent {
     //   weightMultiplier: 14.5,
     //   weightChangePerWeek: -3
     // };
+    this.lifestyleOptions = this.configurationService.getLifestyleSelection();
   }
 
   calculateMacros(userInputForm: NgForm) {
@@ -36,6 +40,7 @@ export class CalculatorComponent {
     this.warningMessage = {
       message: this.calculatorService.determineWeightChangeTooRisky(this.userData)
     }
+    console.log(this.userData);
 
 
 
