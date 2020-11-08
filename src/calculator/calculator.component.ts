@@ -35,15 +35,18 @@ export class CalculatorComponent {
   calculateMacros(userInputForm: NgForm) {
 
     this.userData = userInputForm.value;
+    this.runConversion();
     this.calories = this.calculatorService.calculateCalories(this.userData);
     this.caloriesInGrams = this.calculatorService.calculateGramsFromCalories(this.calories);
     this.warningMessage = {
       message: this.calculatorService.determineWeightChangeTooRisky(this.userData)
-    }
+    };
     console.log(this.userData);
+  }
 
-
-
+  private runConversion() {
+    this.userData.weight = this.calculatorService.convertMassUnits(this.userData.weight, this.userData.weightUnits);
+    this.userData.weightGoal = this.calculatorService.convertMassUnits(this.userData.weightGoal, this.userData.goalWeightUnits);
   }
 
 }

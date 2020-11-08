@@ -3,22 +3,38 @@
     <h2>User Information</h2>
     <form #userDataForm="ngForm" (ngSubmit) = "calculateMacros(userDataForm)" class="user-form">
       <div class="form-control">
-        <label for="weight" class="label">Weight</label>
-        <input type="number" id="weight" name="weight" ngModel required/>
+        <label for="weight">Weight</label>
+        <div class="weight-units">
+          <input type="number" id="weight" name="weight" ngModel required/>
+          <div class="radio-toolbar">
+            <input id="weight-lb" type="radio" name="weightUnits" value="lb" ngModel />
+            <label for="weight-lb">lb</label>
+            <input id="weight-kg" type="radio" name="weightUnits" value="kg" ngModel />
+            <label for="weight-kg">kg</label>
+          </div>
+        </div>
       </div>
 
       <div class="form-control">
-        <label for="time-frame" class="label">Time Frame</label>
+        <label for="time-frame">Time Frame</label>
         <input type="date" id="time-frame" name="timeFrame" ngModel />
       </div>
 
       <div class="form-control">
-        <label for="weight-goal" class="label">Goal</label>
-        <input type="number" id="weight-goal" name="weightGoal" ngModel />
+        <label for="weight-goal">Goal</label>
+        <div class=weight-units>
+          <input type="number" id="weight-goal" name="weightGoal" ngModel />
+          <div class="radio-toolbar">
+            <input id="goalWeight-lb" type="radio" name="goalWeightUnits" value="lb" ngModel />
+            <label for="goalWeight-lb">lb</label>
+            <input id="goalWeight-kg" type="radio" name="goalWeightUnits" value="kg" ngModel />
+            <label for="goalWeight-kg">kg</label>
+          </div>
+        </div>
       </div>
 
       <div class="form-control">
-        <label for="weight-multiplier" class="label">Lifestyle</label>
+        <label for="weight-multiplier">Lifestyle</label>
         <select name="weightMultiplier" ngModel>
           <option *ngFor="let lifestyle of lifestyleOptions" [value]="lifestyle.Multiplier">
             {{lifestyle.Name}}

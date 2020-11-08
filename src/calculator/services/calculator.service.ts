@@ -49,6 +49,14 @@ export class CalculatorService {
     return message;
   }
 
+  convertMassUnits(weight: number, unit: string) {
+    if (unit === 'kg') {
+      weight = weight * 2.20462;
+    }
+
+    return weight;
+  }
+
   private calculateCalorieChangePerDay(userData: UserData): number {
     const weeksFromGoal = this.getDateDifferenceInWeeksFromCurrentDate(userData.timeFrame);
     const weightDifference = userData.weightGoal - userData.weight;

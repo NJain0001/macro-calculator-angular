@@ -4,4 +4,6 @@ export interface UserData {
     weightGoal: number;
     weightMultiplier: number;
     weightChangePerWeek: number;
+    weightUnits: string;
+    goalWeightUnits: string;
 }
