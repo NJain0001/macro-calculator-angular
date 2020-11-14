@@ -1,3 +1,14 @@
+
+input, select {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
 .wrapper {
     display: grid;
     grid-template-rows: 1fr 2fr;
@@ -14,9 +25,6 @@
     background-color: #f5f5f5;
 }
 
-h2 {
-    margin-bottom: 1em;
-}
 .user-form {
     height: 40vh;
     font-size: 1em;
@@ -36,12 +44,6 @@ h2 {
     text-align: right;
     margin-right: 1em;
     align-self: center;
-}
-
-.form-control  input, select {
-    border-radius: 5px;
-    outline: none;
-    border: none;
 }
 
 .result-section {
@@ -159,7 +161,24 @@ h2 {
     color: white;
 }
 
+label.required:after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
 
+/* validation css */
+input[required].ng-valid,
+select.ng-valid {
+    border-left: 5px solid green;
+}
+
+input.ng-invalid.ng-dirty,
+select.ng-invalid.ng-dirty {
+    border-left: 5px solid red;
+}
+
+/* different screen sizes */
 @media screen and (min-width: 600px) {
     .wrapper {
         margin: 0 4em;

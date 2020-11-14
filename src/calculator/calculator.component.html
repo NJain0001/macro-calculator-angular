@@ -3,9 +3,9 @@
     <h2>User Information</h2>
     <form #userDataForm="ngForm" (ngSubmit) = "calculateMacros(userDataForm)" class="user-form">
       <div class="form-control">
-        <label for="weight">Weight</label>
+        <label for="weight" class="required">Weight</label>
         <div class="weight-units">
-          <input type="number" id="weight" name="weight" ngModel required/>
+          <input required type="number" id="weight" name="weight" pattern="^[+]?\d+([.]\d+)?$" ngModel/>
           <div class="radio-toolbar">
             <input id="weight-lb" type="radio" name="weightUnits" value="lb" ngModel />
             <label for="weight-lb">lb</label>
@@ -16,14 +16,14 @@
       </div>
 
       <div class="form-control">
-        <label for="time-frame">Time Frame</label>
-        <input type="date" id="time-frame" name="timeFrame" ngModel />
+        <label for="time-frame" class="required">Time Frame</label>
+        <input type="date" id="time-frame" name="timeFrame" ngModel required />
       </div>
 
       <div class="form-control">
-        <label for="weight-goal">Goal</label>
+        <label for="weight-goal" class="required">Goal</label>
         <div class=weight-units>
-          <input type="number" id="weight-goal" name="weightGoal" ngModel />
+          <input type="number" id="weight-goal" name="weightGoal" pattern="^[+]?\d+([.]\d+)?$" ngModel required />
           <div class="radio-toolbar">
             <input id="goalWeight-lb" type="radio" name="goalWeightUnits" value="lb" ngModel />
             <label for="goalWeight-lb">lb</label>
@@ -34,8 +34,8 @@
       </div>
 
       <div class="form-control">
-        <label for="weight-multiplier">Lifestyle</label>
-        <select name="weightMultiplier" ngModel>
+        <label for="weight-multiplier" class="required">Lifestyle</label>
+        <select name="weightMultiplier" ngModel required>
           <option *ngFor="let lifestyle of lifestyleOptions" [value]="lifestyle.Multiplier">
             {{lifestyle.Name}}
           </option>
